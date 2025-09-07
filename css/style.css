@@ -252,13 +252,14 @@ img{
 } 
 .main_menu li:nth-child(1)::before,
 .main_menu li:nth-child(2)::before,
+.main_menu li:nth-child(4)::before,
 .main_menu li:nth-child(5)::before,
 .main_menu li:nth-child(7)::before{
      content: "";
 }
-.main_menu li:nth-child(3),
-.main_menu li:nth-child(4),
-.main_menu li:nth-child(6){
+.main_menu>li:nth-child(3),
+/* .main_menu li:nth-child(4), */
+.main_menu>li:nth-child(6){
      padding-right: 30px;
 }
 .main_menu_li:hover > .sub-menu {

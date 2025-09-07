@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - CarServ</title>
+    <!-- favicon icon -->
+    <link rel="icon" href="img/apple-touch-icon.png">
+    <!-- font awesome sheet -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- bootstrap sheet -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- filter -->
+    <link rel="stylesheet" href="css/filter_fancy.css">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <!-- style sheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- responsive sheet -->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- start loader -->
+    <div class="preloaders">
+        <div class="position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border redfont"role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+    <!-- end loader -->
+    <!-- start header -->
+    <header id="header"></header>
+    <script>
+        fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+        })
+        .catch(err => console.error('Failed to load inner.html:', err));
+    </script>
+    <!-- end header -->
+    <!-- strat About -->
+    <div class="page_headerbg mb-5 p-0">
+        <div class="py-5">
+            <div class="container text-center">
+                <h1 class="display-3 text-white mb-3 barlow_famaily fw-bold">Gallery</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center text-uppercase">
+                        <li class="breadcrumb-item"><a href="./">Home</a></li>
+                        <!-- <li class="breadcrumb-item"><a href="javascript:void(0)">Pages</a></li> -->
+                        <li class="breadcrumb-item text-white active" aria-current="page">Gallery</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- end About -->
+    <!-- start section -->
+    <div class="py-lg-5 py-3">
+        <div class="container-fluid">
+            <div class="button-group filter-button-group text-center">
+                <button class="filter_bth" data-filter="*">All Galleries</button>
+                <button class="filter_bth" data-filter=".Brakes">Brakes</button>
+                <button class="filter_bth" data-filter=".Suspension">Suspension</button>
+                <button class="filter_bth" data-filter=".Wheels">Wheels</button>
+                <button class="filter_bth" data-filter=".Steering">Steering</button>
+                <button class="filter_bth" data-filter=".Transmission">Transmission</button>
+              </div>
+            <div class="grid g-0 mt-2">
+                <div class="grid-item Steering Transmission">
+                    <img src="img/asset 0.jpeg" alt="" >
+                </div>
+                <div class="grid-item Suspension">
+                    <img src="img/asset 1.jpeg" alt="">
+                </div>
+                <div class="grid-item Brakes Steering">
+                    <img src="img/asset 2.jpeg" alt="">
+                </div>
+                <div class="grid-item Wheels Transmission">
+                    <img src="img/asset 3.jpeg" alt="">
+                </div>
+                <div class="grid-item Wheels Transmission">
+                    <img src="img/asset 4.jpeg" alt="">
+                </div>
+                <div class="grid-item Suspension Wheels Steering">
+                    <img src="img/asset 5.jpeg" alt="">
+                </div>
+                <div class="grid-item Brakes Suspension Steering">
+                    <img src="img/asset 6.jpeg" alt="">
+                </div>
+                <div class="grid-item Brakes Suspension Transmission">
+                    <img src="img/asset 7.jpeg" alt="">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- end section -->
+    <!-- start footer -->
+    <footer id="footer"></footer>
+    <script>
+        fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        })
+        .catch(err => console.error('Failed to load inner.html:', err));
+    </script>
+    <!-- end footer -->  
+
+    <!-- start bottom-top btn -->
+    <div class="bottom_top">
+        <a href="javascript:void(0)" class="btn-lg btn-lg-square"><i class="fa-solid fa-arrow-up-long"></i></a>
+    </div>
+    
+    <!-- end bottom-top btn -->
+
+    
+    
+    <!-- jquery -->
+    <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <!-- owl carousel -->
+    <script src="js/owl.carousel.js"></script>
+    <!-- filter -->
+    <script src="js/unpkg.com_isotope-layout@3.0.6_dist_isotope.pkgd.min.js"></script>
+    <!-- bootstrap -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- custom js -->
+    <script src="js/script.js"></script>
+    <script>
+         // init Isotope
+         var $grid = $('.grid').isotope({
+            // options
+          });
+          // filter items on button click
+          $('.filter-button-group').on( 'click', 'button', function() {
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+          }); 
+    </script>
+</body>
+</html>
